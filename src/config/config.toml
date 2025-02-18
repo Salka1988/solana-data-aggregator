@@ -1,0 +1,37 @@
+# [blockchain]
+# rpc_url: The RPC endpoint URL to connect to the Solana network.
+# max_batch_size: The maximum number of transactions to process per batch.
+#                Default: None (if not specified).
+# max_retry_attempts: The number of times to retry processing a slot on failure.
+#                     Default: 3
+[blockchain]
+rpc_url = "https://api.devnet.solana.com"
+max_batch_size = 100
+max_retry_attempts = 3
+
+# [server]
+# port: The port on which the API server listens.
+#       Default: 3000
+# host: The host (IP address) to bind the server.
+#       Default: "127.0.0.1"
+# apy_key: The API key used to secure server endpoints.
+#          Default: "mysecretkey"
+[server]
+port = 3000
+host = "127.0.0.1"
+apy_key = "mysecretkey"
+
+# [polling]
+# interval: The duration between polling attempts. The value is parsed using humantime.
+#           Default: "2s" if not provided.
+# max_retry_attempts: The maximum number of retry attempts for polling operations.
+#                     Default: 3
+# retry_delay_secs: The delay (in seconds) between each retry.
+#                   Default: 5
+# batch_size: The maximum number of transactions per batch.
+#             Default: None (if not provided)
+[polling]
+interval = "5s"
+max_retry_attempts = 3
+retry_delay_secs = 5
+batch_size = 100

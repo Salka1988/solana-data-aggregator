@@ -1,0 +1,70 @@
+[package]
+name = "solana-data-aggregator"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "solana_data_aggregator"
+path = "src/lib.rs"
+
+[[bin]]
+name = "solana-data-aggregator"
+path = "src/main.rs"
+
+[dependencies]
+# Solana dependencies
+solana-sdk = "=2.1.1"
+solana-client = "2.1.1"
+solana-transaction-status = "2.1.1"
+solana-account-decoder = "2.1.1"
+
+# Async runtime
+tokio = { version = "1.36", features = ["full"] }
+
+# Web framework
+actix-web = "4.9.0"
+actix-service = "2.0.2"
+actix-web-actors = "4.0.0"
+actix = "0.13.5"
+
+# Serialization
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+# Error handling
+thiserror = "1.0"
+anyhow = "1.0"
+
+# Logging and tracing
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+trait-variant = { version = "0.1", default-features = false }
+
+# Time handling
+chrono = { version = "0.4", features = ["serde"] }
+
+# Async traits
+async-trait = "0.1"
+config = "0.15.8"
+clap = { version = "4.4", features = ["derive"] }
+tokio-util = { version = "0.7" }
+futures-util = "0.3.31"
+humantime = "2.1.0"
+tokio-tungstenite = "0.20.1"
+tungstenite = "0.20.1"
+url = "2.5.4"
+pin-project = "1.1.9"
+dotenv = "0.15"
+reqwest = "0.11.27"
+itertools = "0.12.1"
+
+rand = "0.9.0"
+futures = "0.3.31"
+
+[dev-dependencies]
+tokio-test = "0.4"
+mockall = "0.12"
+tempfile = "3.16.0"
+
+[features]
+test-helpers = []
